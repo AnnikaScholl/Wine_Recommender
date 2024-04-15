@@ -23,9 +23,9 @@ st.markdown("🔗 LinkedIn: [Annika](%s)" % url)
 
 st.subheader("Want to learn more?")
 #st.markdown("Want to learn more?")
-with open("data/Annika_Scholl_CV.pdf", "rb") as pdf_file:
+with open("data_app/Annika_Scholl_CV.pdf", "rb") as pdf_file:
     PDFbyte = pdf_file.read()
 st.download_button(label="Download my CV here!📄",
                    data = PDFbyte,
-                    file_name="data/Annika_Scholl_CV.pdf",
+                    file_name="data_app/Annika_Scholl_CV.pdf",
                     mime='application/octet-stream')

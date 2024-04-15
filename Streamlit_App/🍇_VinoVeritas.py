@@ -34,4 +34,4 @@ st.markdown(
 """
 )
 st.subheader("Project Overview")
-st.image('data/wine.png')
+st.image('data_app/wine.png')
