@@ -34,4 +34,4 @@ st.markdown(
 """
 )
 st.subheader("Project Overview")
-st.image('data_app/wine.png')
+st.image('Streamlit_App/data_app/wine.png')
