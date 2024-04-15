@@ -93,7 +93,7 @@ if country is not None:
 
 min_rating = st.sidebar.slider(
     'Minimum Rating',
-    0.0, 4.9, 0.0, step=0.1, format="%f"
+    0.0, round(df_complete['avg_rating_wine_year'].max(),1), 0.0, step=0.1, format="%f"
 )
 
 df_complete = df_complete[df_complete['avg_rating_wine_year'] >= min_rating]
