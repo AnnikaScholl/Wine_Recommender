@@ -4,10 +4,10 @@ matplotlib
 numpy
 pandas
 plotly
-python=3.8
-scikit-learn=0.24
+python
+scikit-learn
 seaborn
-statsmodels=0.14.0
+statsmodels
 python-kaleido
 streamlit
 
