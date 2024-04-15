@@ -1,9 +1,4 @@
 import streamlit as st
-import plotly.express as px
-import pandas as pd
-
-
-import streamlit as st
 import numpy as np
 import pandas as pd
 
@@ -43,11 +38,7 @@ def preprocess_data(feature_final):
 def features(feature_scaled):
     taste = feature_scaled.iloc[:,:5]
     flavor_group = feature_scaled.iloc[:,5:18]
-    flavor_subgroup = feature_scaled.iloc[:,18:-16]
-    all_flavor = feature_scaled.iloc[:,5:-16]
-    food = feature_scaled.iloc[:,-16:]
-    taste_flavor_group = feature_scaled.iloc[:,:18]
-    return taste, flavor_group, taste_flavor_group
+    return taste, flavor_group
 
 
 def chart_sunburst():
