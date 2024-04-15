@@ -28,8 +28,8 @@ st.title("🍷 Wine Recommender")
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv('data_app/data_clean.csv', index_col=0)
-    feature_final = pd.read_csv('data_app/feature_select.csv', index_col=0)
+    df = pd.read_csv('Streamlit_App/data_app/data_clean.csv', index_col=0)
+    feature_final = pd.read_csv('Streamlit_App/data_app/feature_select.csv', index_col=0)
     df_complete = feature_final.iloc[:,5:].join(df, how="inner")
     return df, feature_final, df_complete
 
