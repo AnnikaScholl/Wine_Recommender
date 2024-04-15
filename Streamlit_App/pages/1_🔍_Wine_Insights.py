@@ -51,23 +51,20 @@ def features(feature_scaled):
 
 
 def chart_sunburst():
-    group = pd.DataFrame(df_complete.iloc[:,:13].mean(), columns=['mean']).reset_index()
-    group_list = list(group['index'].str.replace('group_',''))
-    subgroup_df = pd.DataFrame(df_complete.iloc[:,13:468].mean().sort_values().reset_index())
-    subgroup_list = []
+    input_wine_df = pd.DataFrame(df_complete[list(flavor_group.columns)]).mean().reset_index()
+    input_wine_df['group'] = input_wine_df['index'].str.replace('group_', '')
+    input_wine_df['group'] = input_wine_df['group'].str.replace('_', ' ')
+    
+    fig_fla1 = px.pie(input_wine_df, values='index', names='group', color_discrete_sequence=px.colors.qualitative.Antique)
+    fig_fla1.update_traces(textposition='inside', textinfo='percent+label')
+    fig_fla1.update_layout(
+        width=700,
+        height=600,  
+        showlegend=False,   
+        font=dict(color="white", size=15))
 
-    for g in group_list:
-        s_df = pd.DataFrame(subgroup_df['index'].str.split(g, expand=True)[1])
-        s_df['weight'] = subgroup_df[0] 
-        s_df.dropna(inplace=True)
-        s_df['parent'] = g
-        s_df.rename(columns={1: 'group'}, inplace = True)
-        subgroup_list.append(s_df)
+    st.plotly_chart(fig_fla1, use_container_width=True)
 
-    chart = pd.concat(subgroup_list)
-    chart['group'].replace(to_replace='_', value='', regex=True, inplace = True)
-    chart.loc[chart['group'] == '', 'group'] = chart.loc[chart['group'] == '', 'parent']
-    chart['parent'].replace(to_replace='_', value=' ', regex=True, inplace = True)
     return chart
 
 # Load data
@@ -136,15 +133,6 @@ fig.update_layout(width=500,
 st.plotly_chart(fig, use_container_width=True)
 
 st.header("Average Wine Flavour Profile")
-chart = chart_sunburst()
-
-fig2 = px.sunburst(chart, path=['parent', 'group'], values='weight', color_discrete_sequence=px.colors.qualitative.Antique,
-                branchvalues = 'total')
-fig2.update_layout(
-    width=700,
-    height=700, 
-    font_size=18)
-st.plotly_chart(fig2, use_container_width=True)
 
 
     
