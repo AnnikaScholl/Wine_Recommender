@@ -4,10 +4,10 @@ matplotlib
 numpy
 pandas
 plotly
-python
+
 scikit-learn
 seaborn
 statsmodels
-python-kaleido
+
 streamlit
 
