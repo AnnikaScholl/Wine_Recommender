@@ -1,4 +1,20 @@
 import streamlit as st
+import plotly.express as px
+import plotly.graph_objects as go
+import numpy as np
+import pandas as pd
+
+# Plotting
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+from scipy.cluster.hierarchy import linkage, dendrogram
+from sklearn.cluster import AgglomerativeClustering
+from sklearn.metrics.pairwise import cosine_similarity
+
 
 st.set_page_config(
     page_title="VinoVeritas",
