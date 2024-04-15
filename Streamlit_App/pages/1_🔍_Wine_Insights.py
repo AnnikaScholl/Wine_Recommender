@@ -140,7 +140,7 @@ input_wine_df = pd.DataFrame(df_complete[list(flavor_group.columns)]).mean().res
 input_wine_df['group'] = input_wine_df['index'].str.replace('group_', '')
 input_wine_df['group'] = input_wine_df['group'].str.replace('_', ' ')
 
-fig_fla1 = px.pie(input_wine_df, values='index', names='group', color_discrete_sequence=px.colors.qualitative.Antique)
+fig_fla1 = px.pie(input_wine_df, values=0, names='group', color_discrete_sequence=px.colors.qualitative.Antique)
 fig_fla1.update_traces(textposition='inside', textinfo='percent+label')
 fig_fla1.update_layout(
     width=700,
