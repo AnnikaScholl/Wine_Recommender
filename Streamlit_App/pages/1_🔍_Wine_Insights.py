@@ -106,7 +106,7 @@ fig.update_layout(width=500,
     )
 )
 # Display the chart using Streamlit
-st.plotly_chart(fig)
+st.plotly_chart(fig, use_container_width=True)
 
 st.header("Average Wine Flavour Profile")
 
@@ -122,5 +122,5 @@ fig_fla1.update_layout(
     showlegend=False,   
     font=dict(color="white", size=15))
 
-st.plotly_chart(fig_fla1)
+st.plotly_chart(fig_fla1, use_container_width=True)
     
