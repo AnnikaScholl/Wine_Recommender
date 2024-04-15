@@ -41,23 +41,6 @@ def features(feature_scaled):
     return taste, flavor_group
 
 
-def chart_sunburst():
-    input_wine_df = pd.DataFrame(df_complete[list(flavor_group.columns)]).mean().reset_index()
-    input_wine_df['group'] = input_wine_df['index'].str.replace('group_', '')
-    input_wine_df['group'] = input_wine_df['group'].str.replace('_', ' ')
-    
-    fig_fla1 = px.pie(input_wine_df, values='index', names='group', color_discrete_sequence=px.colors.qualitative.Antique)
-    fig_fla1.update_traces(textposition='inside', textinfo='percent+label')
-    fig_fla1.update_layout(
-        width=700,
-        height=600,  
-        showlegend=False,   
-        font=dict(color="white", size=15))
-
-    st.plotly_chart(fig_fla1, use_container_width=True)
-
-    return chart
-
 # Load data
 df, feature_final, df_complete = load_data()
 
@@ -123,7 +106,7 @@ fig.update_layout(width=500,
     )
 )
 # Display the chart using Streamlit
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig)
 
 st.header("Average Wine Flavour Profile")
 
@@ -139,5 +122,5 @@ fig_fla1.update_layout(
     showlegend=False,   
     font=dict(color="white", size=15))
 
-st.plotly_chart(fig_fla1, use_container_width=True)
+st.plotly_chart(fig_fla1)
     
