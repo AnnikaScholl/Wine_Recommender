@@ -178,6 +178,8 @@ def feature_recommender(selected_features, wine_index) :
 # Function to visualise similarity
 def recommender_visualisation(df_top_10):
 
+    st.markdown("***")
+    
     # Get top match index
     top_wine_index = df_top_10.index[0]
 
@@ -219,6 +221,8 @@ def recommender_visualisation(df_top_10):
 
     # Display the chart using Streamlit
     st.plotly_chart(fig_taste, use_container_width=True)
+
+    st.markdown("***")
 
     # 2. Flavor Features
     st.header("Wine Flavour Features")

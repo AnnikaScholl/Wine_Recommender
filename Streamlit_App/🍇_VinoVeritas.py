@@ -6,6 +6,8 @@ st.set_page_config(
     layout="wide"
 )
 
+IS_DARK_THEME = True
+
 st.write("# Welcome to VinoVeritas! ")
 
 st.markdown(
