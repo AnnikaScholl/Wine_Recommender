@@ -108,6 +108,10 @@ fig.update_layout(width=500,
 # Display the chart using Streamlit
 st.plotly_chart(fig, use_container_width=True)
 
+
+st.markdown("***")
+
+
 st.header("Average Wine Flavour Profile")
 
 input_wine_df = pd.DataFrame(df_complete[list(flavor_group.columns)]).mean().reset_index()

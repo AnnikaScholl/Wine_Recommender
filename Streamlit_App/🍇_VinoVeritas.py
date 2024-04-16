@@ -30,7 +30,7 @@ st.markdown(
     
     So the next time you find yourself lost in the wine aisle, let VinoVeritas be your guide. With it by your side, discovering your new favorite bottle has never been easier. 
     
-    Cheers to endless adventures in wine tasting! 🍷✨
+    Let Taste & Flavour uncork the Truth! 🍷✨
 """
 )
 st.subheader("Project Overview")
