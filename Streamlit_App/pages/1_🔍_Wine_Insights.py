@@ -13,7 +13,7 @@ px.defaults.height = 600
 px.defaults.template = "plotly_dark"
 
 
-st.set_page_config(page_title="Wine Insights", page_icon="🔍", layout="wide")
+st.set_page_config(page_title="Wine Insights", page_icon="🔍")
 
 
 st.title("🔍 Wine Insights")
