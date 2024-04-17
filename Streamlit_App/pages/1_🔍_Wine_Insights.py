@@ -70,12 +70,13 @@ min_rating = st.sidebar.slider(
 
 df_complete = df_complete[df_complete['avg_rating_wine_year'] >= min_rating]
 
-min_year, max_year = st.sidebar.slider(
-    'Select a Range of Years',
-    df_complete['year'].min(), df_complete['year'].max(), (df_complete['year'].min(), df_complete['year'].max())
-)
+if df_complete['year'].min() < df_complete['year'].max():
+    min_year, max_year = st.sidebar.slider(
+        'Select a Range of Years',
+        df_complete['year'].min(), df_complete['year'].max(), (df_complete['year'].min(), df_complete['year'].max())
+    )
 
-df_complete = df_complete[(df_complete['year'] >= min_year) & (df_complete['year'] <= max_year)]
+    df_complete = df_complete[(df_complete['year'] >= min_year) & (df_complete['year'] <= max_year)]
 
 
 
