@@ -12,7 +12,7 @@ st.write("# Welcome to VinoVeritas! ")
 
 st.markdown(
     """
-    ### 🍷 Problem Statement
+    ### 🍷 Problem
 
     Ever find yourself lost in the wine aisle, surrounded by countless options but unsure which one will suit your taste buds? 
     With so many wines lining the shelves, it's easy to feel overwhelmed. 🛒
